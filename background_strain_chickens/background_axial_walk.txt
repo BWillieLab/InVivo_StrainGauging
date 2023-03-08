@@ -1,0 +1,30 @@
+background_axial_walk.py
+
+Purpose:
+Analyze strain collected during locomotion, to calculate peak strains engendered.
+
+Input:
+Excel sheet containing strain collected across a segment of consecutive steps. 
+Each row is a sample, and each column is a channel from a gauge. 
+Code is designed to analyze strain from 5 channels.
+
+Method:
+Code plots the data and prompts user to select points to guide the code in computing peak strains.
+
+Output (each is a separate output file, all in .xlsx format): 
+* Filtered input, (Butterworth filter, user should adjust sampling frequency and choose desired cutoff frequency).
+* User-generated inputs, 'ginputs'.
+* Swing and peak strain per step.
+* Average and standard deviation of peak strain across analyzed steps, number of steps analyzed, step frequency.
+
+
+User-generated points:
+Only the x-coordinate of points is of interest, and they need to be selected in the following order:
+1. Point on left boundary of swing phase
+2. Point on right boundary of swing phase
+3. Point on left boundary of first step.
+4. Point on right boundary of first step.
+5. Repeat steps 3 then 4 for as many steps as there are in the segment.
+6. Point at the beginning of the first step.
+7. Point at the end of the swing phase following the last step. 
+See attached image for depiction.

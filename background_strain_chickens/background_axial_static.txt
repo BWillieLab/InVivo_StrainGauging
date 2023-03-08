@@ -1,0 +1,22 @@
+Information for background_axial_static.py
+
+Purpose:
+Analyze strain collected during a static activity (e.g. sitting, standing, perching), to calculate peak strains engendered.
+Code is fully automated, and can analyze multiple files.
+
+Input:
+Excel sheet(s) containing strain collected during the activity. 
+It is imperative that the sheet contain only strains during the activity.
+Each row is a sample, and each column is a channel from a gauge. 
+Code is designed for analyzing strain from 5 channels.
+
+Method:
+For each input file, the average strain and standard deviation is calculated for each channel.
+
+Output for each input file (each is a separate output file, all in .xlsx format): 
+* Filtered input, (Butterworth filter, user should adjust sampling frequency and choose desired cutoff frequency).
+* Mean/sd strain.
+
+
+*Results from this analysis have not been "zeroed".
+Absolute strain values need to be adjusted using strain values calculated during swing-phase (See "background_axial_walk.txt").
